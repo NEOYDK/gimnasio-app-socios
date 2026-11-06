@@ -1,0 +1,3 @@
+# Demo de Yardak: no se indexa (cada página lleva noindex), pero se deja leer para que los buscadores vean ese aviso.
+User-agent: *
+Allow: /

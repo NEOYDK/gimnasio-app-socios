@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es-AR" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PULSO Training Club · Paraná — Sitio de demostración</title>
+  <meta name="description" content="Gimnasio en Paraná: musculación, funcional, cross, spinning y box. Inscribite online en 2 minutos, pagá con Mercado Pago y usá la app. (Sitio de demostración)">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0c0a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gimnasio: inscripción online, app del socio con rangos y panel del personal">
+  <meta property="og:description" content="Demo para gimnasios: inscripción y pago online, app con plan según el objetivo, rangos de Hierro a Retador, clanes y chat, tablet de ingreso y panel con cobros por QR.">
+  <meta property="og:image" content="https://gimnasio-demo-ydk.pages.dev/assets/img/og.jpg?v=5">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0c0a'/%3E%3Cpath d='M8 34h12l5-12 8 22 6-16 4 6h13' fill='none' stroke='%23c8ff2e' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preload" href="/assets/fonts/archivo-258a93fe93.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/archivo-8d39063734.woff2" as="font" type="font/woff2" crossorigin>
+  <style data-fuentes>
+@font-face { font-family: 'Archivo'; font-style: italic; font-weight: 900; font-stretch: 125%; font-display: swap; src: url(/assets/fonts/archivo-d7d359314b.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Archivo'; font-style: italic; font-weight: 900; font-stretch: 125%; font-display: swap; src: url(/assets/fonts/archivo-8d39063734.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Archivo'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/archivo-837705d412.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Archivo'; font-style: normal; font-weight: 400; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/archivo-258a93fe93.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Archivo'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/archivo-837705d412.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Archivo'; font-style: normal; font-weight: 600; font-stretch: 100%; font-display: swap; src: url(/assets/fonts/archivo-258a93fe93.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Archivo'; font-style: normal; font-weight: 800; font-stretch: 125%; font-display: swap; src: url(/assets/fonts/archivo-837705d412.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Archivo'; font-style: normal; font-weight: 800; font-stretch: 125%; font-display: swap; src: url(/assets/fonts/archivo-258a93fe93.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+  </style>
+  <link rel="stylesheet" href="lib/kit.css?v=20261022">
+  <link rel="stylesheet" href="styles.css?v=20261028e">
+</head>
+<body>
+  <a class="skip-link" href="#planes">Saltar a los planes</a>
+  <div class="k-progreso" aria-hidden="true"></div>
+  <div class="demo-bar" role="note">Sitio de demostración · Precios, horarios y datos de ejemplo</div>
+
+  <header class="nav" data-nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio" aria-label="PULSO Training Club, inicio">
+        <svg class="brand-ic" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h13l5-12 8 22 6-16 4 6h16"/></svg>
+        <span>PULSO</span>
+      </a>
+      <nav class="nav-links" aria-label="Principal"><a href="#clases">Clases</a><a href="#horarios">Horarios</a><a href="#planes">Planes</a><a href="#app">App</a><a href="#preguntas">Preguntas</a></nav>
+      <div class="nav-acc">
+        <a class="btn btn-line btn-sm nav-entrar" href="/app/" aria-label="Entrar a mi cuenta (socios)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Entrar</span></a>
+        <a class="btn btn-lima btn-sm" href="/inscripcion/">Inscribirme</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+      <div class="hero-foto" aria-hidden="true"><img src="assets/img/pesas.webp" alt="" width="1024" height="683" fetchpriority="high"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="estado" data-abierto><span class="punto" aria-hidden="true"></span> <span data-abierto-txt>Lunes a viernes de 7 a 22 h · sábados de 9 a 13 h</span></p>
+          <h1 class="titulo"><span class="l1">Entrená</span> <span class="l2 k-grad">en serio.</span></h1>
+          <p class="hero-sub">Musculación, funcional, cross, spinning y box en el centro de Paraná. <strong>Inscribite online en 2 minutos:</strong> elegís tu plan, pagás con Mercado Pago y ya tenés tu app.</p>
+          <div class="hero-actions">
+            <a class="btn btn-lima btn-lg" href="/inscripcion/">Inscribirme online</a>
+            <a class="btn btn-line btn-lg" href="#planes">Ver planes y precios</a>
+          </div>
+          <p class="hero-socio">¿Ya sos socio? <a href="/app/">Entrá a tu cuenta →</a></p>
+          <ul class="k-numeros" data-k aria-label="El gimnasio en números">
+            <li><b data-k-cuenta="34">34</b><span>clases por semana</span></li>
+            <li><b data-k-cuenta="15" data-k-suf=" h">15 h</b><span>abierto por día</span></li>
+            <li><b data-k-cuenta="6">6</b><span>disciplinas</span></li>
+            <li><b>$ 0</b><span>de matrícula</span></li>
+          </ul>
+        </div>
+        <aside class="hoy" aria-label="Planes y precios" data-k>
+          <header class="hoy-head"><p class="hoy-tit">Planes</p><p class="hoy-nota">por mes · precios de ejemplo</p></header>
+          <ul class="hoy-lista hero-planes">
+            <li><a href="/inscripcion/?plan=Full&amp;periodo=1"><b>Full</b><span>Sala + todas las clases <em class="cupo">El más elegido</em></span><strong>$ 49.000</strong></a></li>
+            <li><a href="/inscripcion/?plan=Clases&amp;periodo=1"><b>Clases</b><span>12 clases por mes</span><strong>$ 36.000</strong></a></li>
+            <li><a href="/inscripcion/?plan=Sala&amp;periodo=1"><b>Sala</b><span>Musculación libre</span><strong>$ 38.000</strong></a></li>
+          </ul>
+          <a class="hoy-btn" href="#planes">Ver qué incluye cada uno →</a>
+        </aside>
+      </div>
+    </section>
+
+    <div class="cinta-caja" aria-hidden="true"><div class="cinta"><div class="cinta-track"><span>Musculación</span><span>Funcional</span><span>Cross</span><span>Spinning</span><span>Box</span><span>Movilidad</span><span>Musculación</span><span>Funcional</span><span>Cross</span><span>Spinning</span><span>Box</span><span>Movilidad</span></div></div></div>
+
+    <!-- CLASES -->
+    <section class="section" id="clases">
+      <div class="container">
+        <header class="sec-head" data-k>
+          <p class="kicker">Clases</p>
+          <h2 class="titulo"><span class="l1">Elegí cómo</span> <span class="l2 k-grad">querés entrenar.</span></h2>
+          <p class="lead">Profes en sala todo el día y clases grupales cortas e intensas. Vení con lo que tengas: arrancamos de tu nivel.</p>
+        </header>
+        <div class="clases">
+          <article class="clase" data-k><svg class="clase-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8v8M17.5 8v8M3.5 10v4M20.5 10v4M6.5 12h11"/></svg><h3>Musculación</h3><p>Sala completa con máquinas, barras y mancuernas. Te armamos la rutina y la vamos ajustando.</p><p class="int" role="img" aria-label="Intensidad media"><span class="on"></span><span class="on"></span><span></span><span></span></p></article>
+          <article class="clase" data-k><svg class="clase-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5 5.5 13.5h5.5l-1 8 7.5-11h-5.5z"/></svg><h3>Funcional</h3><p>Circuitos de 50 minutos para ganar fuerza y resistencia. Ideal si recién arrancás.</p><p class="int" role="img" aria-label="Intensidad media alta"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></p></article>
+          <article class="clase" data-k><svg class="clase-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 9.2V7.4a3.4 3.4 0 0 1 6.8 0v1.8"/><circle cx="12" cy="15" r="6"/><path d="M10 15h4"/></svg><h3>Cross</h3><p>Levantamientos, saltos y trabajo metabólico. La clase más intensa: se adapta a cada uno.</p><p class="int" role="img" aria-label="Intensidad alta"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></p></article>
+          <article class="clase" data-k><svg class="clase-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l3.5-7h5l3.5 7M9.5 9 12 16h2M13 5.5h2.5"/></svg><h3>Spinning</h3><p>45 minutos de bici con música. Quema mucho y cuida las rodillas.</p><p class="int" role="img" aria-label="Intensidad media alta"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></p></article>
+          <article class="clase" data-k><svg class="clase-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2.5v2.5M15 2.5v2.5M8 2.5h8"/><rect x="7" y="5" width="10" height="16" rx="5"/><path d="M7 10.5h10"/></svg><h3>Box</h3><p>Técnica, bolsa y trabajo de piernas, sin contacto. Para descargar y ponerte en forma.</p><p class="int" role="img" aria-label="Intensidad alta"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></p></article>
+          <article class="clase" data-k><svg class="clase-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.6" r="1.9"/><path d="M12 7.5v6M4.5 10.5l7.5 3 7.5-3M8 21l4-7.5 4 7.5"/></svg><h3>Movilidad</h3><p>Elongación, core y respiración. El complemento que tu espalda te va a agradecer.</p><p class="int" role="img" aria-label="Intensidad baja"><span class="on"></span><span></span><span></span><span></span></p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="section section-alt" id="horarios">
+      <div class="container">
+        <header class="sec-head" data-k>
+          <p class="kicker">Horarios</p>
+          <h2 class="titulo"><span class="l1">Clases todo el día,</span> <span class="l2 k-grad">con tu lugar asegurado.</span></h2>
+          <p class="lead">Mirá los horarios y cuántos lugares quedan. Los socios reservan desde la app en 2 toques y, si la clase está llena, quedan en lista de espera.</p>
+        </header>
+        <div class="agenda" data-k>
+          <div class="dias" role="tablist" aria-label="Días" data-dias>
+            <button type="button" role="tab" aria-selected="true">Lun</button>
+          </div>
+          <ol class="slots" data-slots aria-live="polite">
+            <li class="slot"><b>18:00</b><span><strong>Funcional</strong> · Caro · 50 min</span><a class="btn btn-lima btn-sm" href="/app/">Reservar</a></li>
+          </ol>
+          <div class="agenda-acc"><a class="btn btn-lima" href="/inscripcion/">Inscribirme online</a><a class="btn btn-line" href="/app/">Ya soy socio: abrir la app</a></div>
+          <p class="fine">Lugares de ejemplo. Las clases se reservan desde la app, con tu cuenta de socio. La sala de musculación está abierta en todo el horario.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="section" id="planes">
+      <div class="container">
+        <header class="sec-head" data-k>
+          <p class="kicker">Planes</p>
+          <h2 class="titulo"><span class="l1">Sin matrícula.</span> <span class="l2 k-grad">Sin letra chica.</span></h2>
+          <p class="lead">Pagás por mes y, si te comprometés por más tiempo, te sale más barato. Precios de ejemplo.</p>
+        </header>
+        <div class="periodo" role="radiogroup" aria-label="Forma de pago" data-periodo data-k>
+          <label><input type="radio" name="periodo" value="1" checked><span>Mensual</span></label>
+          <label><input type="radio" name="periodo" value="3"><span>Trimestral <em>−10%</em></span></label>
+          <label><input type="radio" name="periodo" value="6"><span>Semestral <em>−15%</em></span></label>
+        </div>
+        <div class="planes">
+          <article class="plan" data-k data-plan="Clases" data-precio="36000">
+            <p class="plan-tag">Para arrancar</p>
+            <h3 class="plan-nombre">Clases</h3>
+            <p class="plan-precio"><span data-precio-mes>$ 36.000</span><small>/mes</small></p>
+            <p class="plan-total" data-precio-total>Pagás mes a mes</p>
+            <ul><li>12 clases grupales por mes</li><li>Funcional, cross, spinning, box y movilidad</li><li>Reservás desde el celular</li></ul>
+            <a class="btn btn-line btn-block" href="#" data-plan-insc>Inscribirme online</a>
+          </article>
+          <article class="plan plan-top" data-k data-plan="Full" data-precio="49000">
+            <p class="plan-badge">El más elegido</p>
+            <p class="plan-tag">Todo incluido</p>
+            <h3 class="plan-nombre">Full</h3>
+            <p class="plan-precio"><span data-precio-mes>$ 49.000</span><small>/mes</small></p>
+            <p class="plan-total" data-precio-total>Pagás mes a mes</p>
+            <ul><li>Sala de musculación libre</li><li>Todas las clases, sin límite</li><li>Rutina personalizada y control cada mes</li><li>Congelás el plan si viajás</li></ul>
+            <a class="btn btn-lima btn-block" href="#" data-plan-insc>Inscribirme online</a>
+          </article>
+          <article class="plan" data-k data-plan="Sala" data-precio="38000">
+            <p class="plan-tag">A tu ritmo</p>
+            <h3 class="plan-nombre">Sala</h3>
+            <p class="plan-precio"><span data-precio-mes>$ 38.000</span><small>/mes</small></p>
+            <p class="plan-total" data-precio-total>Pagás mes a mes</p>
+            <ul><li>Musculación libre todos los días</li><li>Rutina armada por un profe</li><li>Tu plan y tus récords en la app</li></ul>
+            <a class="btn btn-line btn-block" href="#" data-plan-insc>Inscribirme online</a>
+          </article>
+        </div>
+        <p class="planes-nota" data-k>Te inscribís y pagás online con Mercado Pago: tu cuenta queda lista al instante. ¿Dudas? <a class="link-chico" href="#" data-wa-planes>Escribinos por WhatsApp</a>.</p>
+
+        <!-- ¿QUÉ PLAN TE CONVIENE? -->
+        <div class="test" data-test data-k>
+          <h3 class="test-tit">¿No sabés cuál elegir? <span>Respondé 3 preguntas.</span></h3>
+          <fieldset><legend>1 · ¿Qué buscás?</legend>
+            <label><input type="radio" name="obj" value="bajar"><span>Bajar de peso</span></label>
+            <label><input type="radio" name="obj" value="musculo"><span>Ganar músculo</span></label>
+            <label><input type="radio" name="obj" value="forma"><span>Ponerme en forma</span></label>
+          </fieldset>
+          <fieldset><legend>2 · ¿Cuántos días podés venir?</legend>
+            <label><input type="radio" name="dias" value="2"><span>2 por semana</span></label>
+            <label><input type="radio" name="dias" value="3"><span>3 o 4</span></label>
+            <label><input type="radio" name="dias" value="5"><span>5 o más</span></label>
+          </fieldset>
+          <fieldset><legend>3 · ¿Cómo te gusta entrenar?</legend>
+            <label><input type="radio" name="modo" value="clases"><span>En clase, con grupo</span></label>
+            <label><input type="radio" name="modo" value="solo"><span>Solo, a mi ritmo</span></label>
+            <label><input type="radio" name="modo" value="mixto"><span>Las dos</span></label>
+          </fieldset>
+          <div class="test-res" data-test-res hidden aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LA APP DEL SOCIO -->
+    <section class="section section-alt" id="app">
+      <div class="container">
+        <header class="sec-head" data-k>
+          <p class="kicker">La app de PULSO</p>
+          <h2 class="titulo"><span class="l1">Entrenás,</span> <span class="l2 k-grad">subís de rango.</span></h2>
+          <p class="lead">Al inscribirte tenés tu cuenta: un plan según lo que buscás, metas de cada semana y rangos como en los juegos, de Hierro a Retador. Reservás tus clases, clanes, chat y tu profe, todo en el celu.</p>
+        </header>
+        <ol class="ligas" data-ligas data-k aria-label="Ligas: Hierro, Bronce, Plata, Oro, Platino, Esmeralda, Diamante, Maestro y Retador"></ol>
+        <div class="app-feats">
+          <article class="app-feat" data-k><h3>Tu plan, según tu objetivo</h3><p>Bajar de peso, ganar músculo, fuerza, resistencia o salud. Cada ejercicio con su foto, su video y cómo se hace. Sumás o cambiás lo que quieras.</p></article>
+          <article class="app-feat" data-k><h3>Metas y seguimiento</h3><p>Anotás kilos y repes de cada serie, con el descanso cronometrado. Tres metas por semana y tus días guardados para ver cómo mejorás.</p></article>
+          <article class="app-feat" data-k><h3>Rangos con divisiones</h3><p>Hierro, Bronce, Plata, Oro, Platino, Esmeralda y Diamante (de IV a I), Maestro y Retador. Cada día que terminás suma PL: más si levantás más y hacés todas las repes.</p></article>
+          <article class="app-feat" data-k><h3>Clanes con tag</h3><p>Unite a un equipo con su tag de 3 letras al lado de tu nombre; desde Oro IV podés crear el tuyo. Compiten en el ranking de clanes.</p></article>
+          <article class="app-feat" data-k><h3>Chat del gimnasio</h3><p>El general, el de tu clan y privados, con los dueños y los profes marcados. El gimnasio modera.</p></article>
+          <article class="app-feat" data-k><h3>Profe personal</h3><p>Si querés, lo sumás desde la app: aparece en tu cuenta, te arma el plan y le escribís por chat.</p></article>
+          <article class="app-feat" data-k><h3>Entrás con la tablet</h3><p>En la puerta ponés tu DNI y tu PIN. Si la cuota venció, la pagás ahí mismo con un QR y entrás.</p></article>
+          <article class="app-feat" data-k><h3>Reservás tus clases</h3><p>Ves cuántos lugares quedan y reservás en 2 toques. Si está llena, quedás en lista de espera: si alguien cancela, el lugar es tuyo.</p></article>
+        </div>
+        <div class="app-acc" data-k>
+          <a class="btn btn-lima btn-lg" href="/app/">Probar la app</a>
+          <a class="btn btn-line btn-lg" href="/inscripcion/">Inscribirme online</a>
+        </div>
+        <p class="planes-nota" data-k>Demo: entrá como Tomás (DNI 35123456, PIN 1234) o inscribite con datos inventados. Mirá también <a class="link-chico" href="/tablet/">la tablet de la entrada</a> y <a class="link-chico" href="/panel/">el panel del personal</a> (va aparte de la web).</p>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="section section-alt" id="preguntas">
+      <div class="container angosto">
+        <header class="sec-head" data-k>
+          <p class="kicker">Preguntas</p>
+          <h2 class="titulo"><span class="l1">Lo que</span> <span class="l2 k-grad">nos preguntan.</span></h2>
+        </header>
+        <div class="k-faq">
+          <details data-k><summary>¿Cómo me inscribo?</summary><p>Online, en 2 minutos: elegís el plan, ponés tus datos y un PIN, y pagás con Mercado Pago. Tu cuenta queda activa al instante: con tu DNI y tu PIN entrás por la tablet de la puerta y a la app.</p></details>
+          <details data-k><summary>Nunca entrené, ¿puedo venir?</summary><p>Claro. Los profes adaptan cada ejercicio a tu nivel y en la sala te armamos una rutina para empezar de a poco.</p></details>
+          <details data-k><summary>¿Qué tengo que traer?</summary><p>Ropa cómoda, zapatillas, una toalla y agua. El apto físico lo podés traer en tu primera semana.</p></details>
+          <details data-k><summary>¿Cómo pago?</summary><p>Efectivo, transferencia o Mercado Pago. Los planes trimestral y semestral tienen descuento.</p></details>
+          <details data-k><summary>¿Puedo congelar el plan si viajo?</summary><p>Sí: pausamos tu cuota 7, 15 o 30 días por vacaciones, viaje o lesión, y el vencimiento se corre esos días. Avisanos antes de irte; si volvés antes, entrás por la tablet y se reanuda sola.</p></details>
+          <details data-k><summary>¿Hay estacionamiento?</summary><p>Hay lugar en la cuadra y bicicletero adentro. Estamos en el centro de Paraná.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="k-contacto" id="contacto">
+      <div class="k-in">
+        <p class="kicker">Contacto</p>
+        <h2 class="titulo" data-k><span class="l1">Empezá</span> <span class="l2 k-grad">esta semana.</span></h2>
+        <p data-k>Inscribite online o escribinos por WhatsApp o Instagram. Lunes a viernes de 7 a 22 h y sábados de 9 a 13 h, en el centro de Paraná.</p>
+        <div class="k-botones" data-k>
+          <a class="k-btn k-btn-wa" href="#" data-wa-contacto><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>Escribinos por WhatsApp</a>
+          <a class="k-btn k-btn-ig" href="https://www.instagram.com/ydk.exe/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM17.5 5.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>Seguinos en Instagram</a>
+        </div>
+        <ul class="k-chips" data-k aria-label="Formas de pago"><li>Efectivo</li><li>Transferencia</li><li>Mercado Pago</li><li>Sin matrícula</li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 PULSO Training Club · Demo · Paraná, Entre Ríos</p>
+      <p>¿Tenés un gimnasio y querés una web así? <a href="#" data-maker>Hablemos</a></p>
+    </div>
+    <p class="container credits">Fotos: “Dumbbells rack gym” y “Free kettlebells floor gym image” de <a href="https://www.rawpixel.com/image/6025334/photo-image-public-domain-free-sport" target="_blank" rel="noopener">rawpixel</a> (CC0), pasadas a blanco y negro.</p>
+  </footer>
+
+  <button class="chat-fab k-fab" type="button" data-open-chat data-k-tip="¿Qué plan te conviene? Preguntame" aria-label="¿Qué plan te conviene? Preguntame: abre el asistente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg></button>
+  <section class="chat" data-chat hidden aria-label="Asistente del gimnasio">
+    <header class="chat-head"><div><p class="chat-name">Pulso Bot</p><p class="chat-status"><span class="punto" aria-hidden="true"></span> Responde al instante</p></div><button class="chat-close" type="button" data-close-chat aria-label="Cerrar">×</button></header>
+    <div class="chat-log" data-chat-log aria-live="polite"><p class="msg msg-bot">¡Hola! 💪 Soy el asistente de PULSO. Te cuento horarios, planes y cómo inscribirte. ¿Qué te gustaría entrenar?</p></div>
+    <div class="chat-suggest" data-chat-suggest><button type="button">¿Qué plan me conviene?</button><button type="button">Nunca entrené, ¿puedo ir?</button><button type="button">¿A qué hora hay funcional?</button></div>
+    <form class="chat-form" data-chat-form><label class="sr-only" for="chat-input">Escribí tu consulta</label><input id="chat-input" autocomplete="off" maxlength="500" placeholder="Escribí tu consulta…"><button type="submit" aria-label="Enviar">→</button></form>
+    <a class="chat-wa" href="#planes">Ver los planes e inscribirme</a>
+  </section>
+
+  <script defer src="lib/manifest.js?v=20261028"></script>
+  <script defer src="lib/chat.js?v=20261022"></script>
+  <script defer src="lib/kit.js?v=20261022"></script>
+  <script defer src="/lib/pulso.js?v=20261028"></script>
+  <script defer src="main.js?v=20261028"></script>
+</body>
+</html>

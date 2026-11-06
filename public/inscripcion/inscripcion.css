@@ -1,0 +1,38 @@
+/* Inscripción online de PULSO */
+body { background: radial-gradient(110% 50% at 50% 0%, rgba(200, 255, 46, .1), transparent 60%), var(--negro); }
+.i-top { display: flex; align-items: center; gap: .6rem; padding: calc(.7rem + var(--arriba)) 1rem .7rem; width: min(640px, 100%); margin: 0 auto; }
+.i-main { width: min(640px, 100%); margin: 0 auto; padding: .5rem 1rem calc(2.5rem + var(--abajo)); display: grid; gap: 1rem; }
+.i-tit { font-size: clamp(2.1rem, 9vw, 3rem); line-height: .95; }
+.i-pasos { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: .3rem; counter-reset: p; }
+.i-pasos li { counter-increment: p; display: grid; justify-items: center; gap: .25rem; font-size: .72rem; font-weight: 700; color: var(--mute); text-align: center; }
+.i-pasos li::before { content: counter(p); width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--sup-2); border: 1px solid var(--linea); font-size: .85rem; }
+.i-pasos li.hecho { cursor: pointer; }
+.i-pasos li.hecho::before { content: "✓"; background: rgba(200, 255, 46, .2); color: var(--lima); border-color: var(--borde-2); }
+.i-pasos li[aria-current="step"] { color: var(--texto); }
+.i-pasos li[aria-current="step"]::before { background: var(--lima); color: var(--negro); border-color: var(--lima); }
+.i-paso { border: 0; padding: 0; display: grid; gap: .8rem; animation: sube .35s var(--ease); }
+.i-leg { font-size: 1.35rem; font-weight: 800; padding: 0; }
+.i-periodo { margin-bottom: .2rem; }
+.i-planes, .i-ops { display: grid; gap: .55rem; }
+.i-op { position: relative; display: flex; align-items: center; gap: .9rem; padding: .85rem 1rem; border-radius: 18px; border: 1px solid var(--linea); background: var(--sup); cursor: pointer; transition: border-color .2s, background .2s; }
+.i-op input { position: absolute; opacity: 0; }
+.i-op > span:first-of-type { flex: 1; display: grid; gap: .1rem; min-width: 0; }
+.i-op small { color: var(--mute); font-size: .86rem; }
+.i-op:has(input:checked) { border-color: var(--lima); background: rgba(200, 255, 46, .08); box-shadow: 0 0 0 1px var(--lima); }
+.i-op:has(input:focus-visible) { outline: 2px solid var(--lima); outline-offset: 2px; }
+.i-op.top::after { content: "El más elegido"; position: absolute; top: -.6rem; right: 1rem; font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; background: var(--lima); color: var(--negro); padding: .1rem .5rem; border-radius: 6px; }
+.i-precio { display: grid; justify-items: end; font-weight: 900; font-size: 1.05rem; white-space: nowrap; }
+.i-precio small { font-weight: 600; font-size: .75rem; }
+.i-profe { display: flex !important; align-items: center; gap: .7rem; }
+.i-profe > span { display: grid; min-width: 0; }
+.i-dos { display: grid; grid-template-columns: 1fr 1fr; gap: 0 .8rem; }
+.i-res { display: grid; gap: .1rem; background: var(--sup); border: 1px solid var(--linea); border-radius: 18px; padding: .6rem 1rem; }
+.i-res > div { display: grid; grid-template-columns: 1fr auto; gap: 0 1rem; padding: .55rem 0; border-bottom: 1px solid var(--linea); }
+.i-res > div:last-child { border-bottom: 0; }
+.i-res dt { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); grid-column: 1 / -1; }
+.i-res dd { margin: 0; }
+.i-res .i-m { font-weight: 800; text-align: right; }
+.i-total dd.i-m { color: var(--lima); font-size: 1.4rem; font-weight: 900; grid-column: 2; }
+.i-botones { display: flex; gap: .6rem; }
+.i-botones .btn { flex: 1; }
+.i-botones [data-atras] { flex: 0 0 auto; }

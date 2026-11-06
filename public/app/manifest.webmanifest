@@ -1,0 +1,19 @@
+{
+  "name": "PULSO · App del socio",
+  "short_name": "PULSO",
+  "description": "Tu plan de entrenamiento, metas, rangos, clanes, chat y tu cuota en PULSO Training Club.",
+  "lang": "es-AR",
+  "id": "/app/",
+  "start_url": "/app/",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0c0a",
+  "theme_color": "#0b0c0a",
+  "categories": ["health", "fitness", "sports"],
+  "icons": [
+    { "src": "/assets/icons/pulso-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/pulso-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/pulso-512-m.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

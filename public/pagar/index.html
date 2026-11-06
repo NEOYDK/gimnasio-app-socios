@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pagar · PULSO Training Club — Demo</title>
+  <meta name="description" content="Pagá tu cuota de PULSO con Mercado Pago desde el celular. (Demo)">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0c0a">
+  <link rel="icon" href="/assets/icons/pulso-192.png">
+  <link rel="preload" href="/assets/fonts/archivo-258a93fe93.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/archivo-8d39063734.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/lib/fuentes.css?v=20261027">
+  <link rel="stylesheet" href="/lib/pulso.css?v=20261027c">
+  <style>
+    body { min-height: 100svh; display: grid; place-items: center; padding: 1.5rem 1rem calc(2rem + var(--abajo)); background: radial-gradient(110% 60% at 50% 0%, rgba(200, 255, 46, .12), transparent 60%), var(--negro); }
+    .caja { width: min(440px, 100%); display: grid; gap: 1rem; }
+    .pago { text-align: center; padding: 1.4rem 1.2rem; }
+    .pago h1 { font-size: 1.3rem; margin: .2rem 0 .4rem; }
+    .monto { font-size: 2.6rem; font-weight: 900; font-stretch: 125%; color: var(--lima); margin: .4rem 0 1rem; }
+    .mp { background: #0070b8; color: #fff; }
+    .listo .ico { width: 84px; height: 84px; margin: 0 auto .8rem; border-radius: 50%; display: grid; place-items: center; background: var(--lima); color: var(--negro); font-size: 2.6rem; font-weight: 900; animation: sube .5s var(--ease); }
+    .simulado { border: 1px solid #2b8fd6; border-radius: 18px; padding: 1rem; text-align: left; display: grid; gap: .6rem; background: #0f1a22; }
+    .simulado .t-tit { color: #6cc9ff; }
+    .tarjeta-mp { display: flex; justify-content: space-between; align-items: center; padding: .8rem 1rem; border-radius: 14px; background: #16242f; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="caja">
+    <span class="marca" style="justify-self:center"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h13l5-12 8 22 6-16 4 6h16"/></svg>PULSO</span>
+    <section class="tarjeta pago" data-pago aria-live="polite"><p class="mute">Buscando el pago…</p></section>
+    <p class="nota-demo">Demo: Mercado Pago está en modo de prueba y <b>no se cobra nada</b>. En el gimnasio real, el pago va a la cuenta de Mercado Pago del gimnasio.</p>
+  </main>
+  <script defer src="/lib/pulso.js?v=20261028"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const P = window.Pulso, { $, esc, plata, fecha } = P;
+      const gym = P.gym(), cod = P.params.get("c") || "", pagoId = P.params.get("payment_id") || P.params.get("collection_id") || "";
+      let d = null;
+      const caja = $("[data-pago]");
+      function pintar() {
+        if (d.estado === "pagado") {
+          const hasta = d.concepto === "profe" ? d.profeVence : d.vence;
+          caja.className = "tarjeta pago listo";
+          caja.innerHTML = `<div class="ico" aria-hidden="true">✓</div><h1>¡Pago aprobado, ${esc(d.socio)}!</h1>
+            <p>${esc(d.detalle)} · <b>${plata(d.monto)}</b></p>
+            <p class="mute">${d.concepto === "profe" ? "Tu profe personal ya aparece en tu cuenta" : d.concepto === "inscripcion" ? "Tu cuenta ya está activa: entrá a la app con tu DNI y tu PIN" : "Tu cuota quedó al día"}${hasta ? " hasta el " + fecha(hasta) : ""}.</p>
+            <a class="btn btn-lima btn-ancho" href="/app/" style="margin-top:1rem">${d.concepto === "inscripcion" ? "Entrar a la app" : "Abrir la app"}</a>
+            <p class="ayuda" style="margin-top:.6rem">Si estás en la tablet de la entrada, ya te deja pasar.</p>`;
+          return;
+        }
+        if (d.estado !== "pendiente") { caja.innerHTML = `<h1>Este cobro ya no está activo</h1><p class="mute">Pedí uno nuevo en recepción o desde la app.</p>`; return; }
+        caja.innerHTML = `<p class="t-tit" style="justify-content:center">Pagar en PULSO</p><h1>${esc(d.detalle)}</h1><p class="mute">${esc(d.socio)}</p>
+          <p class="monto">${plata(d.monto)}</p>
+          <button class="btn mp btn-ancho" type="button" data-pagar>Pagar con Mercado Pago</button>
+          <p class="ayuda" style="margin-top:.6rem">Tarjeta de crédito o débito, o dinero en cuenta.</p>`;
+      }
+      async function cargar() {
+        const r = await P.api(`/api/cobro?gym=${encodeURIComponent(gym)}&c=${encodeURIComponent(cod)}${pagoId ? "&pago=" + encodeURIComponent(pagoId) : ""}`);
+        if (!r.ok) { caja.innerHTML = `<h1>No encontramos este pago</h1><p class="mute">${esc(r.datos.error || "")} Puede que sea de un gimnasio de prueba que ya se borró.</p><a class="link" href="/">Ir a la web</a>`; return; }
+        d = r.datos; pintar();
+      }
+      document.addEventListener("click", async e => {
+        if (e.target.closest("[data-pagar]")) {
+          if (d.mp) {
+            e.target.disabled = true;
+            const r = await P.api("/api/cobro", { metodo: "POST", cuerpo: { gym, c: cod, accion: "mp" } });
+            if (r.ok && r.datos.url) location.href = r.datos.url; else { e.target.disabled = false; P.toast(r.datos.error || "No pudimos abrir Mercado Pago."); }
+            return;
+          }
+          // Demo sin cuenta de Mercado Pago: una pantalla de pago de prueba
+          caja.innerHTML = `<div class="simulado"><p class="t-tit">Mercado Pago · modo de prueba</p><p>${esc(d.detalle)}</p>
+            <div class="tarjeta-mp"><span>Visa •••• 4242</span><span>${plata(d.monto)}</span></div>
+            <button class="btn mp btn-ancho" type="button" data-aprobar>Pagar ${plata(d.monto)}</button>
+            <p class="ayuda">Es una demo: no se cobra nada ni se usan tarjetas reales.</p></div>`;
+          $("[data-aprobar]").focus();
+        }
+        if (e.target.closest("[data-aprobar]")) {
+          e.target.disabled = true; e.target.textContent = "Procesando…";
+          const r = await P.api("/api/cobro", { metodo: "POST", cuerpo: { gym, c: cod, accion: "demo" } });
+          if (r.ok) { d = { ...d, ...r.datos }; pintar(); } else { P.toast(r.datos.error || "No se pudo."); cargar(); }
+        }
+      });
+      cargar();
+    });
+  </script>
+</body>
+</html>

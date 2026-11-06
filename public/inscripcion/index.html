@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Inscribite online · PULSO Training Club — Demo</title>
+  <meta name="description" content="Inscribite en PULSO desde el celular: elegí tu plan y tu objetivo, sumá un profe si querés y pagá con Mercado Pago. Tu cuenta queda lista al instante. (Demo)">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0c0a">
+  <link rel="icon" href="/assets/icons/pulso-192.png">
+  <link rel="preload" href="/assets/fonts/archivo-258a93fe93.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/archivo-8d39063734.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/lib/fuentes.css?v=20261027">
+  <link rel="stylesheet" href="/lib/pulso.css?v=20261027c">
+  <link rel="stylesheet" href="inscripcion.css?v=20261027">
+</head>
+<body>
+  <header class="i-top">
+    <a class="marca" href="/" aria-label="PULSO, volver a la web"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h13l5-12 8 22 6-16 4 6h16"/></svg>PULSO</a>
+    <span class="chip-demo">Demo</span>
+  </header>
+  <main class="i-main">
+    <h1 class="ancha i-tit">Inscribite <span class="lima">online.</span></h1>
+    <ol class="i-pasos" aria-label="Pasos"><li data-p="1" aria-current="step">Plan</li><li data-p="2">Objetivo</li><li data-p="3">Profe</li><li data-p="4">Tus datos</li><li data-p="5">Pagar</li></ol>
+
+    <form data-form novalidate>
+      <!-- 1 Plan -->
+      <fieldset class="i-paso" data-paso="1">
+        <legend class="i-leg">¿Qué plan querés?</legend>
+        <div class="seg i-periodo" role="radiogroup" aria-label="Cada cuánto pagás">
+          <label><input type="radio" name="periodo" value="1" checked><span>Mensual</span></label>
+          <label><input type="radio" name="periodo" value="3"><span>3 meses −10%</span></label>
+          <label><input type="radio" name="periodo" value="6"><span>6 meses −15%</span></label>
+        </div>
+        <div class="i-planes" data-planes></div>
+      </fieldset>
+      <!-- 2 Objetivo -->
+      <fieldset class="i-paso" data-paso="2" hidden>
+        <legend class="i-leg">¿Qué buscás?</legend>
+        <p class="mute">Con esto te armamos el plan de entrenamiento y tus metas de cada semana. Lo podés cambiar cuando quieras desde la app.</p>
+        <div class="i-ops" data-objetivos></div>
+      </fieldset>
+      <!-- 3 Profe -->
+      <fieldset class="i-paso" data-paso="3" hidden>
+        <legend class="i-leg">¿Querés un profe personal?</legend>
+        <p class="mute">Te arma el plan, te corrige en la sala y te sigue por chat. Es opcional: también podés entrenar solo con el plan de la app.</p>
+        <div class="i-ops" data-profes></div>
+      </fieldset>
+      <!-- 4 Datos -->
+      <fieldset class="i-paso" data-paso="4" hidden>
+        <legend class="i-leg">Tus datos</legend>
+        <div class="campo"><label for="i-nombre">Nombre y apellido</label><input id="i-nombre" name="nombre" autocomplete="name" maxlength="50"></div>
+        <div class="campo"><label for="i-dni">DNI</label><input id="i-dni" name="dni" inputmode="numeric" autocomplete="off" maxlength="10"><span class="ayuda">Con tu DNI entrás a la app y en la tablet de la entrada.</span></div>
+        <div class="campo"><label for="i-tel">WhatsApp</label><input id="i-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="343 412 3456" maxlength="25"></div>
+        <div class="i-dos">
+          <div class="campo"><label for="i-pin">Elegí un PIN</label><input id="i-pin" name="pin" type="password" inputmode="numeric" autocomplete="new-password" maxlength="6" placeholder="4 a 6 números"></div>
+          <div class="campo"><label for="i-pin2">Repetilo</label><input id="i-pin2" name="pin2" type="password" inputmode="numeric" autocomplete="new-password" maxlength="6"></div>
+        </div>
+      </fieldset>
+      <!-- 5 Resumen -->
+      <section class="i-paso" data-paso="5" hidden aria-labelledby="i-res-tit">
+        <h2 id="i-res-tit" class="i-leg">Revisá y pagá</h2>
+        <dl class="i-res" data-resumen></dl>
+        <p class="ayuda">Pagás con Mercado Pago. Apenas se aprueba, tu cuenta queda activa: entrás a la app y a la tablet con tu DNI y tu PIN.</p>
+      </section>
+
+      <ul class="errores" data-errores role="alert" hidden></ul>
+      <div class="i-botones">
+        <button class="btn btn-borde" type="button" data-atras hidden>Atrás</button>
+        <button class="btn btn-lima" type="submit" data-seguir>Seguir</button>
+      </div>
+    </form>
+    <p class="nota-demo">Demo: es un gimnasio de prueba solo para vos. Usá datos inventados (el DNI no tiene que ser el tuyo) y el pago es de prueba: no se cobra nada.</p>
+  </main>
+  <script defer src="/lib/pulso.js?v=20261028"></script>
+  <script defer src="inscripcion.js?v=20261027"></script>
+</body>
+</html>

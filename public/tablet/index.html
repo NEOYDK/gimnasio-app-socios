@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tablet de la entrada · PULSO Training Club — Demo</title>
+  <meta name="description" content="La tablet de la entrada de PULSO: cada socio entra con su DNI y su PIN. Si la cuota venció, la paga ahí con un QR. (Demo)">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0c0a">
+  <link rel="icon" href="/assets/icons/pulso-192.png">
+  <link rel="preload" href="/assets/fonts/archivo-258a93fe93.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/archivo-8d39063734.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/lib/fuentes.css?v=20261027">
+  <link rel="stylesheet" href="/lib/pulso.css?v=20261027c">
+  <link rel="stylesheet" href="tablet.css?v=20261030b">
+</head>
+<body class="tablet">
+  <header class="t-top">
+    <span class="marca"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h13l5-12 8 22 6-16 4 6h16"/></svg>PULSO</span>
+    <span class="t-reloj" data-reloj></span>
+  </header>
+
+  <main class="t-main">
+    <!-- Ingresar -->
+    <section class="t-paso" data-paso="ingresar">
+      <h1 class="ancha t-tit" data-t-tit>Ingresá con tu DNI</h1>
+      <p class="t-sub" data-t-sub>Escribilo sin puntos y tocá Seguir.</p>
+      <div class="t-pantalla" data-t-pantalla aria-live="polite"><span data-t-valor></span><i class="t-cursor" aria-hidden="true"></i></div>
+      <div class="t-teclado" role="group" aria-label="Teclado numérico">
+        <button type="button" data-tecla="1">1</button><button type="button" data-tecla="2">2</button><button type="button" data-tecla="3">3</button>
+        <button type="button" data-tecla="4">4</button><button type="button" data-tecla="5">5</button><button type="button" data-tecla="6">6</button>
+        <button type="button" data-tecla="7">7</button><button type="button" data-tecla="8">8</button><button type="button" data-tecla="9">9</button>
+        <button type="button" data-tecla="borrar" aria-label="Borrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 5H9l-6 7 6 7h12zM13 9l6 6M19 9l-6 6"/></svg></button>
+        <button type="button" data-tecla="0">0</button>
+        <button type="button" class="t-ok" data-tecla="ok" data-t-ok>Seguir</button>
+      </div>
+      <button class="link t-volver" type="button" data-t-volver hidden>← Volver al DNI</button>
+    </section>
+
+    <!-- Resultado -->
+    <section class="t-paso t-res" data-paso="resultado" hidden aria-live="assertive"></section>
+  </main>
+
+  <footer class="t-pie">
+    <p class="nota-demo">Demo: <b>Tomás</b> 35123456 · PIN 1234 (entra) — <b>Valentina</b> 40111222 · PIN 1111 (cuota vencida: paga con el QR) — <b>Agus</b> 37455120 · PIN 2222 (ya está adentro: marcá su salida). <a class="link" href="/panel/" target="_blank" rel="noopener">Ver el panel</a></p>
+  </footer>
+
+  <script defer src="/lib/pulso.js?v=20261028"></script>
+  <script defer src="/lib/qrcode.js?v=20261027"></script>
+  <script defer src="tablet.js?v=20261030a"></script>
+</body>
+</html>

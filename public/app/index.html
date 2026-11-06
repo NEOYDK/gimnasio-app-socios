@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>App del socio · PULSO Training Club — Demo</title>
+  <meta name="description" content="La app del socio de PULSO: tu plan según tu objetivo, metas de la semana, rangos de Hierro a Retador, clanes, chat y tu profe personal. (Demo)">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0c0a">
+  <link rel="manifest" href="/app/manifest.webmanifest">
+  <link rel="icon" href="/assets/icons/pulso-192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/pulso-180.png">
+  <link rel="preload" href="/assets/fonts/archivo-258a93fe93.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/archivo-8d39063734.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/lib/fuentes.css?v=20261027">
+  <link rel="stylesheet" href="/lib/pulso.css?v=20261027c">
+  <link rel="stylesheet" href="app.css?v=20261030b">
+</head>
+<body>
+  <p class="cargando" data-cargando>Cargando tu cuenta…</p>
+
+  <!-- ENTRAR -->
+  <main class="entrar" data-entrar hidden>
+    <div class="entrar-caja">
+      <a class="marca" href="/" aria-label="PULSO Training Club, ir a la web"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h13l5-12 8 22 6-16 4 6h16"/></svg>PULSO</a>
+      <h1 class="ancha entrar-tit">Tu entrenamiento,<span class="lima"> en tu bolsillo.</span></h1>
+      <p class="mute">Entrá con tu DNI y tu PIN: son los mismos que usás en la tablet de la entrada.</p>
+      <form class="entrar-form" data-form-entrar novalidate>
+        <div class="campo"><label for="e-dni">DNI</label><input id="e-dni" name="dni" inputmode="numeric" autocomplete="username" maxlength="10" required></div>
+        <div class="campo"><label for="e-pin">PIN</label><input id="e-pin" name="pin" type="password" inputmode="numeric" autocomplete="current-password" maxlength="6" required></div>
+        <ul class="errores" data-error-entrar role="alert" hidden></ul>
+        <button class="btn btn-lima btn-ancho" type="submit">Entrar</button>
+      </form>
+      <p class="nota-demo">Demo: probá como <b>Tomás</b> (DNI <b>35123456</b>, PIN <b>1234</b>). <button class="link" type="button" data-completar-demo>Completar</button></p>
+      <a class="link" href="/inscripcion/">¿Todavía no sos socio? Inscribite online</a>
+    </div>
+  </main>
+
+  <!-- APP -->
+  <div class="app" data-app hidden>
+    <header class="a-top">
+      <a class="marca" href="/" aria-label="PULSO, ir a la web"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 34h13l5-12 8 22 6-16 4 6h16"/></svg>PULSO</a>
+      <span class="chip-demo">Demo</span>
+      <button class="a-campana" type="button" data-avisos aria-label="Avisos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/></svg><span class="badge" data-avisos-n hidden>0</span></button>
+      <button class="a-yo" type="button" data-tab-ir="perfil" aria-label="Tu perfil" data-yo-av></button>
+    </header>
+
+    <main class="a-main" id="contenido">
+      <section data-pant="inicio" aria-label="Inicio"></section>
+      <section data-pant="entrenar" aria-label="Entrenar" hidden></section>
+      <section data-pant="progreso" aria-label="Progreso" hidden></section>
+      <section data-pant="comunidad" aria-label="Comunidad" hidden>
+        <div class="seg com-seg" role="group" aria-label="Comunidad">
+          <button type="button" data-com="chats" aria-pressed="true">Chats</button>
+          <button type="button" data-com="ranking" aria-pressed="false">Ranking</button>
+          <button type="button" data-com="clanes" aria-pressed="false">Clanes</button>
+        </div>
+        <div data-com-vista="chats"></div>
+        <div data-com-vista="ranking" hidden></div>
+        <div data-com-vista="clanes" hidden></div>
+      </section>
+      <section data-pant="perfil" aria-label="Perfil" hidden></section>
+    </main>
+
+    <div class="descanso" data-descanso role="timer" aria-label="Descanso entre series" hidden>
+      <p class="d-info"><small>Descanso</small><b data-d-tiempo>0:00</b></p>
+      <div class="d-acc"><button type="button" data-d-mas="-15" aria-label="15 segundos menos">−15</button><button type="button" data-d-mas="15" aria-label="15 segundos más">+15</button><button type="button" data-d-saltar>Listo</button></div>
+      <div class="d-barra" aria-hidden="true"><i data-d-barra></i></div>
+    </div>
+
+    <nav class="a-tabs" aria-label="Secciones">
+      <button type="button" data-tab="inicio" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9H4z M9 20v-6h6v6"/></svg>Inicio</button>
+      <button type="button" data-tab="entrenar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6M6 6v12M18 6v12M21 9v6M6 12h12"/></svg>Entrenar</button>
+      <button type="button" data-tab="progreso"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 16l5-5 4 3 6-7"/></svg>Progreso</button>
+      <button type="button" data-tab="comunidad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Comunidad<span class="punto" data-punto-com hidden></span></button>
+      <button type="button" data-tab="perfil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Perfil</button>
+    </nav>
+  </div>
+
+  <!-- CHAT ABIERTO -->
+  <section class="chatv" data-chatv role="dialog" aria-modal="true" aria-labelledby="chatv-tit" hidden>
+    <header class="chatv-cab">
+      <button class="chatv-volver" type="button" data-chat-cerrar aria-label="Volver"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span data-chat-av></span>
+      <div class="chatv-tits"><h2 id="chatv-tit" data-chat-tit></h2><p data-chat-sub></p></div>
+    </header>
+    <ol class="chatv-log" data-chat-log aria-live="polite"></ol>
+    <p class="chatv-silencio" data-chat-silencio hidden></p>
+    <form class="chatv-form" data-chat-form>
+      <label class="sr-only" for="chat-txt">Mensaje</label>
+      <input id="chat-txt" maxlength="400" autocomplete="off" enterkeyhint="send" placeholder="Escribí un mensaje…">
+      <button class="chatv-enviar" type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-6 16-3-7z"/></svg></button>
+    </form>
+  </section>
+
+  <div class="velo" data-velo hidden></div>
+  <section class="hoja" data-hoja role="dialog" aria-modal="true" aria-labelledby="hoja-tit" hidden>
+    <button class="hoja-cerrar" type="button" data-hoja-cerrar aria-label="Cerrar">×</button>
+    <div data-hoja-in></div>
+  </section>
+
+  <script defer src="/lib/pulso.js?v=20261028"></script>
+  <script defer src="app.js?v=20261030a"></script>
+</body>
+</html>
